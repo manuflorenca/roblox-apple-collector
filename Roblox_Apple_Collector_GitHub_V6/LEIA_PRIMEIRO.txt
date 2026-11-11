@@ -1,0 +1,58 @@
+COLETOR DE MACAS V6 - CAMINHADA CONTINUA (WINDOWS)
+=================================================
+
+O QUE FOI CORRIGIDO
+- Na V5, o jogo podia prender a camera na borda. O sprite continuava
+  andando, mas o rastreador nao achava o avatar e ativava uma pausa permanente.
+- A V6 tenta estimar a posicao do avatar enquanto a camera esta parada.
+- Quando uma captura falha, a sessao continua ATIVA, procurando a referencia
+  automaticamente. Nao precisa apertar F9 para tirar da pausa automatica.
+- Os passos ficaram maiores, com menos espera entre capturas.
+- Perto da cerca, o coletor reduz os passos e tenta retornar ao centro.
+
+COMO INSTALAR E USAR
+1. Feche a V5 e EXTRAIA este ZIP em uma pasta nova (nao misture pastas).
+2. Abra Roblox no Windows, camera de cima e personagem no centro do cercado.
+3. Execute INICIAR_COLETOR.bat.
+4. No CMD, digite 5 e ENTER, clique no jogo, clique nos quatro cantos internos
+   (superior esquerdo, superior direito, inferior direito, inferior esquerdo)
+   e depois no centro do SEU personagem. ENTER salva os 5 pontos.
+5. No CMD digite 7 e ENTER e clique de volta na janela do Roblox.
+6. O coletor calibra W e D, procura frutas e tenta andar sozinho.
+7. PARA PARAR: digite 8 e ENTER no CMD, ou pressione F8.
+   Para encerrar: digite 0 e ENTER (ou CTRL+C no CMD).
+
+CONTROLES DE VELOCIDADE NO CMD, MESMO DURANTE A COLETA
+1 + ENTER = normal (passos maximos de 0,14 s)
+2 + ENTER = rapido (PADRAO; passos maximos de 0,24 s)
+3 + ENTER = turbo (passos maximos de 0,31 s; TESTE SOB SUPERVISAO)
+A velocidade nao pode ultrapassar o limite calculado para a cerca.
+O modo turbo reduz automaticamente a duracao perto de limites.
+
+OUTROS CONTROLES
+F5 = remarcar a cerca (quando a sessao de movimento estiver parada)
+F6 = foto da deteccao
+F7 = iniciar
+F8 = parar (pode tambem digitar 8 + ENTER)
+F9 = pausar/retomar MANUALMENTE
+
+IMPORTANTE: LIMITES REAIS
+- A sessao nao ativa mais uma pausa PERMANENTE por perder o rastreamento.
+- Se nao houver informacao visual suficiente para saber onde esta a cerca,
+  ele pode aguardar sem apertar WASD, TENTANDO SE RECUPERAR automaticamente.
+  Nao seria seguro continuar andando cegamente, pois sairia do cercado.
+- Nao e possivel garantir movimento sem nenhuma interrupcao, nem garantir que
+  nunca saia da cerca: o Roblox pode mudar a camera ou bloquear as teclas.
+- Nao altere zoom/angulo/tamanho da janela apos F5 e mantenha o Roblox em foco.
+- Se o jogo perder foco quando voce clicar no CMD, a movimentacao para
+  temporariamente e volta so quando voce clicar novamente no Roblox.
+- Se ocorrer um problema, envie coletor_log.txt e diagnostico_antes.png e
+  diagnostico_depois.png (se os arquivos existirem).
+- Testado com capturas e transformacoes de teste, NAO com Roblox em tempo real.
+- Consulte e respeite as regras do jogo sobre automacao.
+
+ARQUIVOS
+coletor_macas_roblox.py = programa
+INICIAR_COLETOR.bat = instalacao/execucao
+coletor_log.txt = criado automaticamente durante o uso
+coleta_em_andamento.png = foto do rastreamento durante a coleta
